@@ -1,0 +1,56 @@
+﻿@model Camiones.Models.Camione
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1 class="display-5 mt-5 mb-4">Detalles camion</h1>
+
+    <div>
+        
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdCamionero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdCamionero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Marca)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Marca)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TipoCamion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoCamion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PesoCamion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PesoCamion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PesoCarga)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PesoCarga)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GpsCc)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GpsCc)
+            </dd>
+        </dl>
+    </div>
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Patente" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Atras</a>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@model Camiones.Models.Camione
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1 class="display-5 mt-5 mb-4">Ingresar Nuevo Camion</h1>
+
+    
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="Patente" class="form-label"></label>
+                    <input asp-for="Patente" class="form-control" />
+                    <span asp-validation-for="Patente" class="text-danger"></span>
+                </div>
+                <!-- Agregar el campo IdCamionero -->
+                <div class="mb-3">
+                    <label asp-for="IdCamionero" class="form-label"></label>
+                    <input asp-for="IdCamionero" class="form-control" />
+                    <span asp-validation-for="IdCamionero" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Marca" class="form-label"></label>
+                    <input asp-for="Marca" class="form-control" />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TipoCamion" class="form-label"></label>
+                    <input asp-for="TipoCamion" class="form-control" />
+                    <span asp-validation-for="TipoCamion" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PesoCamion" class="form-label"></label>
+                    <input asp-for="PesoCamion" class="form-control" />
+                    <span asp-validation-for="PesoCamion" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PesoCarga" class="form-label"></label>
+                    <input asp-for="PesoCarga" class="form-control" />
+                    <span asp-validation-for="PesoCarga" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="GpsCc" class="form-label"></label>
+                    <input asp-for="GpsCc" class="form-control" />
+                    <span asp-validation-for="GpsCc" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Atras</a>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</div>
+
+

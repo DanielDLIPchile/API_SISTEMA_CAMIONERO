@@ -1,0 +1,37 @@
+﻿@model Camiones.Models.Camione
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <h1 class="display-5 mt-5 mb-4">Eliminar Registro</h1>
+
+    <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="card-title">Camiones</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">ID Camionero</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.IdCamionero)</dd>
+                <dt class="col-sm-2">Marca</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Marca)</dd>
+                <dt class="col-sm-2">Tipo de Camión</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.TipoCamion)</dd>
+                <dt class="col-sm-2">Peso del Camión</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.PesoCamion)</dd>
+                <dt class="col-sm-2">Peso de la Carga</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.PesoCarga)</dd>
+                <dt class="col-sm-2">GPS o CC</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.GpsCc)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Patente" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </form>
+</div>

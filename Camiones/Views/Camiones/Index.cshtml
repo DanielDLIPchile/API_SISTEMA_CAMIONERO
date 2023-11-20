@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Camiones.Models.Camione>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="display-5 mt-5 mb-4">Listado de Camiones</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Ingresar Nuevo Camion</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IdCamionero)</th>
+                <th>@Html.DisplayNameFor(model => model.Marca)</th>
+                <th>@Html.DisplayNameFor(model => model.TipoCamion)</th>
+                <th>@Html.DisplayNameFor(model => model.PesoCamion)</th>
+                <th>@Html.DisplayNameFor(model => model.PesoCarga)</th>
+                <th>@Html.DisplayNameFor(model => model.GpsCc)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdCamionero)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TipoCamion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PesoCamion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PesoCarga)</td>
+                    <td>@Html.DisplayFor(modelItem => item.GpsCc)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Patente" class="btn btn-primary">Editar</a> 
+                        <a asp-action="Details" asp-route-id="@item.Patente" class="btn btn-secondary">Detalles</a> 
+                        <a asp-action="Delete" asp-route-id="@item.Patente" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
